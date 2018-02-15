@@ -1,0 +1,48 @@
+<kendo-grid [data]="gridDataMonth" [pageSize]="stateMonth.take" [skip]="stateMonth.skip" [group]="stateMonth.group" [height]="550" [pageable]="true" (dataStateChange)="dataStateChange($event)">
+    <ng-template kendoGridToolbarTemplate>
+        <button kendoGridPDFCommand><span class='k-icon k-i-file-pdf'></span>Export to PDF</button>
+        <button kendoGridExcelCommand><span class="k-icon k-i-file-excel"></span>Export to Excel</button>
+    </ng-template>
+    <kendo-grid-column field="Month" title='' width="120">
+        <ng-template kendoGridGroupHeaderTemplatе>
+        </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="Incidents" title="Incidents">
+        <!--<ng-template kendoGridGroupFooterTemplate let-group="group" let-aggregates>{{aggregates["Incidents"].sum}}</ng-template>-->
+        <ng-template kendoGridFooterTemplate let-column="column">{{total["Incidents"].sum}}</ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="Total" title="Total Actual US$" width="230">
+        <!--<ng-template kendoGridGroupFooterTemplate let-group="group" let-aggregates>{{aggregates["Total"].sum}}</ng-template>-->
+        <ng-template kendoGridFooterTemplate let-column="column">{{total["Total"].sum}}</ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="Average" title="Average Actual US$" width="230">
+        <!--<ng-template kendoGridGroupFooterTemplate let-group="group" let-aggregates>{{aggregates["Average"].sum}}</ng-template>-->
+        <ng-template kendoGridFooterTemplate let-column="column">{{total["Average"].sum}}</ng-template>
+        <!--<ng-template kendoGridCellTemplate let-dataItem>
+            <input type="checkbox" [checked]="dataItem.Discontinued" disabled/>
+        </ng-template>-->
+    </kendo-grid-column>
+    <kendo-grid-column field="TotalIndexed" title="Total Indexed US$" width="120">
+        <!--<ng-template kendoGridGroupFooterTemplate let-group="group" let-aggregates>{{aggregates["TotalIndexed"].sum}}</ng-template>-->
+        <ng-template kendoGridFooterTemplate let-column="column">{{total["TotalIndexed"].sum}}</ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="AverageIndexed" title="Average Indexed Indexed US$" width="120">
+        <!--<ng-template kendoGridGroupFooterTemplate let-group="group" let-aggregates>{{aggregates["AverageIndexed"].sum}}</ng-template>-->
+        <ng-template kendoGridFooterTemplate let-column="column">{{total["AverageIndexed"].sum}}</ng-template>
+    </kendo-grid-column>
+    <kendo-grid-pdf fileName="Incidents.pdf" [allPages]="true" paperSize="A4" [repeatHeaders]="true" [landscape]="true">
+        <kendo-grid-pdf-margin top="2cm" left="1cm" right="1cm" bottom="2cm"></kendo-grid-pdf-margin>
+        <ng-template kendoGridPDFTemplate let-pageNum="pageNum" let-totalPages="totalPages">
+            <div class="page-template">
+                <div class="header">
+                    <div style="float: right">Page {{ pageNum }} of {{ totalPages }}</div>
+                    Willis Towers Watson
+                </div>
+                <div class="footer">
+                    Page {{ pageNum }} of {{ totalPages }}
+                </div>
+            </div>
+        </ng-template>
+    </kendo-grid-pdf>
+    <!--<kendo-grid-excel fileName="Products.xlsx" [fetchData]="data"></kendo-grid-excel>-->
+</kendo-grid>

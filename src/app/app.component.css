@@ -1,0 +1,19 @@
+ .nav-w-submenu-container .nav-vertical-submenu.active {
+     margin-left: 300px;
+     padding: 20px 0;
+     background: #e4e4e4 repeat;
+     position: absolute;
+     z-index: 30;
+ }
+ 
+ .nav-w-submenu-container .nav-vertical-submenu.active li {
+     cursor: pointer;
+ }
+ 
+ .nav-w-submenu-container .nav-vertical-submenu.active li a {
+     cursor: pointer;
+ }
+ 
+ .sidenav-priority {
+     z-index: auto;
+ }

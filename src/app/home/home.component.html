@@ -1,0 +1,67 @@
+<div class="col-md-12 col-sm-12">
+    <h4 class='home-top-margin'>Latest Announcement</h4>
+    <div class="home-card-announcement">
+        <div class="card-body">
+            <p class="card-text">With effect from 21st May 2018, mining and metals losses will be removed from the Energy losses will be removed from the Energy Losses Database as they are not considered core energy risks. Any subscribers who valued their inclusion are invited
+                to email Andrew Jackson for the spreadsheet of the details of these losses.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="col-md-12 col-sm-12 hidden-xs-down">
+    <div class="home-border-docs">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="col-md-12 col-sm-12">
+                    <h4 class='home-top-margin'>Shared Documents</h4>
+                    <div class="table-responsive table-striped">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>List of Available Documents</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let doc of sharedDocs; let i=index">
+                                    <td>{{doc.DocumentName}}<span class='pull-right' (click)='downloadSharedDocument(doc.DocumentId)'><i class="fa fa-download" aria-hidden="true"></i></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12 col-sm-12 hidden-md-up">
+    <div class="home-border-docs">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="col-md-12 col-sm-12">
+                    <h4 class='home-top-margin'>Shared Documents</h4>
+                    <div class="" *ngFor="let doc of sharedDocs; let i=index">
+                        <div class="home-card-documents">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Name
+                                </p>
+                                <p class="card-text">
+                                    {{doc.DocumentName}}<span class='pull-right' (click)='downloadSharedDocument(doc.DocumentId)'><i class="fa fa-download" aria-hidden="true"></i></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12 col-sm-12">
+    <h4 class='home-top-margin'>Contact Us</h4>
+    <div class="home-card-announcement">
+        <div class="card-body">
+            <span>For technical queries, please contact the <a href='#'>Willis Services</a></span><br>
+            <span>For queries, regarding the content of the Energy Losses application, please contact <a href='#'>XYZ</a></span>
+        </div>
+    </div>
+</div>

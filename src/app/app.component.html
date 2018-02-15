@@ -1,0 +1,113 @@
+<!-- Masshead Desktop -->
+<nav class="navbar navbar-light navbar-sticky-top bg-software-gray-1 hidden-sm-down">
+    <a class="navbar-brand" href="#">
+        <!--<img src="./assets/images/logo.svg" class="d-inline-block align-top" alt="WTW">-->
+        <h4>Risk Intelligence Energy Losses</h4>
+    </a>
+</nav>
+
+<!-- Masshead Mobile -->
+<nav class="navbar navbar-light navbar-sticky-top  bg-software-gray-1 mobile-nav hidden-md-up ">
+    <a class="navbar-brand" href="#">
+        <img src="./assets/images/logo.svg" alt="WTW">
+    </a>
+</nav>
+
+<div class="container-fluid">
+    <div class="row display-flex">
+        <div class="col-md-1 col-sm-2 hidden-xs-down app-navbar-padding">
+            <!-- Navigation Desktop -->
+            <div class="row">
+                <div class="nav-w-submenu-container">
+                    <ul class="nav nav-vertical nav-vertical-dark nav-pills nav-stacked sidenav-priority">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="home" routerLinkActive="active">
+                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
+                                <span>Search</span>
+                            </a>
+                        </li>
+                        <li id="adminElem" #adminElem class="nav-item" data-for="admin-submenu">
+                            <a class="nav-link">
+                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
+                                <span>Admin</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
+                                <span>Overall</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
+                                <span>OEE</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="reports" routerLinkActive="active">
+                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
+                                <span>Custom Report Download</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul id="activeAdmin" #activeAdmin class="nav-vertical-dark nav-vertical-submenu admin-submenu active">
+                        <li>
+                            <a routerLink="disclaimers" routerLinkActive="active">
+                                <span>User Maintenance</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a routerLink="announcements" routerLinkActive="active">
+                                <span>Announcements</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="home-page-admin" routerLinkActive="active">
+                                <span>Subscriptions</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="doc-access" routerLinkActive="active">
+                                <span>Depth Categories</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="doc-folder" routerLinkActive="active">
+                                <span>Logs</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-11 col-sm-10 sidenav-priority">
+            <div class="row bg-software-gray-1">
+                <div class="col-md-12 col-sm-12">
+                    <div class="p-1 hidden-xs-down">
+                        <h2 class="display-1">
+                            Welcome to Energy Losses</h2>
+                    </div>
+                    <div class="p-1 hidden-md-up">
+                        <h2 class="display-3">
+                            Welcome to Energy Losses</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<app-footer></app-footer>
