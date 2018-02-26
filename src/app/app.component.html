@@ -1,106 +1,220 @@
 <!-- Masshead Desktop -->
 <nav class="navbar navbar-light navbar-sticky-top bg-software-gray-1 hidden-sm-down">
     <a class="navbar-brand" href="#">
-        <!--<img src="./assets/images/logo.svg" class="d-inline-block align-top" alt="WTW">-->
-        <h4>Risk Intelligence Energy Losses</h4>
+        <img src="./assets/images/oneplaceHeader.PNG" class="d-inline-block align-top" alt="WTW" width="100%">
+        <!-- <h4>Risk Intelligence Energy Losses</h4> -->
     </a>
 </nav>
 
 <!-- Masshead Mobile -->
 <nav class="navbar navbar-light navbar-sticky-top  bg-software-gray-1 mobile-nav hidden-md-up ">
     <a class="navbar-brand" href="#">
-        <img src="./assets/images/logo.svg" alt="WTW">
+        <img src="./assets/images/oneplaceHeader-mob.PNG" class="d-inline-block align-top" alt="WTW" width="100%">
     </a>
 </nav>
 
+
 <div class="container-fluid">
     <div class="row display-flex">
-        <div class="col-md-1 col-sm-2 hidden-xs-down app-navbar-padding">
+        <!-- Mobile Navigation -->
+        <div class="col-md-12 col-sm-12 hidden-md-up">
+            <div class="row">
+                <div id="btn-menu" class="navbar-dark">
+                    <button id="menu-btn" (click)="menuMobileToggle()" class="navbar-toggler closedtime btn-shift-left" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                           <span class="nav-mobile-text">Menu</span>                
+                    </button>
+                </div>
+                <div class="col-md-12 col-sm-12 pp-2">
+                    <div class="collapse nav-mobile-collapse mobile-nav" id="exCollapsingNavbar">
+                        <div class="bg-white pp-1">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li class="nav-item li-pad">
+                                    <a class="nav-link li-a-mobile-padding" routerLink="home" routerLinkActive="active">
+                                        <span>Home</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item li-pad">
+                                    <a class="nav-link li-a-mobile-padding" routerLink="search" routerLinkActive="active">
+                                        <span>Search</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item li-pad">
+                                    <a class="nav-link li-a-mobile-padding" routerLink="overallLosses" routerLinkActive="active">
+                                        <span>Overall Losses</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item li-pad">
+                                    <a class="nav-link li-a-mobile-padding" routerLink="oee" routerLinkActive="active">
+                                        <span>OEE Losses</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item li-pad">
+                                    <a class="nav-link li-a-mobile-padding" routerLink="customReports" routerLinkActive="active">
+                                        <span>Custom Report Download</span>
+                                    </a>
+                                </li>
+                                <!--<li class="nav-item li-pad">
+                                    <a class="nav-link li-a-mobile-padding" routerLinkActive="active">
+                                        <span>Admin</span>
+                                    </a>
+                                </li>-->
+                                <li class="nav-item li-pad" (click)="dropdownstatus()">
+                                    <a class="nav-link  appdrop dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
+                                        Admin<span class="caret"></span>
+                                    </a>
+                                </li>
+                                <ul class="no-padding" [hidden]="!dropdownOpen">
+                                    <li class="nav-item">
+                                        <a class="nav-link  dropdown-text-mobile" routerLink="disclaimers" routerLinkActive="active">
+                                            <span>Subscription Dashboard</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link  dropdown-text-mobile" routerLink="subscription" routerLinkActive="active">
+                                            <span>Subscription</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link  dropdown-text-mobile" routerLink="home-page-admin" routerLinkActive="active">
+                                            <span>Announcements</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link  dropdown-text-mobile" routerLink="doc-access" routerLinkActive="active">
+                                            <span>Parameter Maintenance</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link  dropdown-text-mobile" routerLink="doc-folder" routerLinkActive="active">
+                                            <span>Validate User Access</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link  dropdown-text-mobile" routerLink="terms-of-use" routerLinkActive="active">
+                                            <span>Add/Remove Document</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <li>
+                                    <hr>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- -->
+        <div class="col-md-1 col-sm-2 hidden-sm-down app-navbar-padding">
             <!-- Navigation Desktop -->
             <div class="row">
                 <div class="nav-w-submenu-container">
                     <ul class="nav nav-vertical nav-vertical-dark nav-pills nav-stacked sidenav-priority">
-                        <li class="nav-item">
+                        <li class="nav-item" (click)='showAdminNavigation = false'>
                             <a class="nav-link" routerLink="home" routerLinkActive="active">
-                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
+                                <img class="dark-nav-img" src="./assets/images/home.svg" alt="">
                                 <span>Home</span>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" *ngIf="!showAdminNavigation">
                             <a class="nav-link">
-                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
+                                <img class="dark-nav-img" src="./assets/images/search.svg" alt="">
                                 <span>Search</span>
                             </a>
                         </li>
-                        <li id="adminElem" #adminElem class="nav-item" data-for="admin-submenu">
+                        <li class="nav-item" *ngIf="!showAdminNavigation">
                             <a class="nav-link">
-                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
-                                <span>Admin</span>
+                                <img class="dark-nav-img" src="./assets/images/overall-losses.svg" alt="">
+                                <span>Overall Losses</span>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" *ngIf="!showAdminNavigation">
                             <a class="nav-link">
-                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
-                                <span>Overall</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">
-                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
+                                <img class="dark-nav-img" src="./assets/images/oee-losses.svg" alt="">
                                 <span>OEE</span>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" *ngIf="!showAdminNavigation">
                             <a class="nav-link" routerLink="reports" routerLinkActive="active">
-                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
+                                <img class="dark-nav-img" src="./assets/images/report.svg" alt="">
                                 <span>Custom Report Download</span>
+                            </a>
+                        </li>
+                        <!--<li class="nav-item" *ngIf="showAdminNavigation">
+                            <a class="nav-link" routerLink="subscriptionDashboard" routerLinkActive="active">
+                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
+                                <span>Subscription Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" *ngIf="showAdminNavigation">
+                            <a class="nav-link" routerLink="subscription" routerLinkActive="active">
+                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
+                                <span>Subscription</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" *ngIf="showAdminNavigation">
+                            <a class="nav-link">
+                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
+                                <span>Add/Edit Announcements</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" *ngIf="showAdminNavigation">
+                            <a class="nav-link">
+                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
+                                <span>EL Parameter Maintenance</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" *ngIf="showAdminNavigation">
+                            <a class="nav-link">
+                                <img class="dark-nav-img" src="./assets/images/placeholder_ww.png" alt="">
+                                <span>Add/Remove Document</span>
+                            </a>
+                        </li>-->
+                        <li id="adminElem" #adminElem class="nav-item" data-for="admin-submenu">
+                            <a class="nav-link">
+                                <img class="dark-nav-img" src="./assets/images/admin.svg" alt="">
+                                <span>Admin</span>
                             </a>
                         </li>
                     </ul>
                     <ul id="activeAdmin" #activeAdmin class="nav-vertical-dark nav-vertical-submenu admin-submenu active">
                         <li>
                             <a routerLink="disclaimers" routerLinkActive="active">
-                                <span>User Maintenance</span>
+                                <span>Subscription Dashboard</span>
                             </a>
                         </li>
 
                         <li>
-                            <a routerLink="announcements" routerLinkActive="active">
-                                <span>Announcements</span>
+                            <a routerLink="subscription" routerLinkActive="active">
+                                <span>Subscription</span>
                             </a>
                         </li>
                         <li>
                             <a routerLink="home-page-admin" routerLinkActive="active">
-                                <span>Subscriptions</span>
+                                <span>Announcements</span>
                             </a>
                         </li>
                         <li>
                             <a routerLink="doc-access" routerLinkActive="active">
-                                <span>Depth Categories</span>
+                                <span>Parameter Maintenance</span>
                             </a>
                         </li>
                         <li>
                             <a routerLink="doc-folder" routerLinkActive="active">
-                                <span>Logs</span>
+                                <span>Validate User Access</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="doc-folder" routerLinkActive="active">
+                                <span>Add/Remove Document</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="col-md-11 col-sm-10 sidenav-priority">
-            <div class="row bg-software-gray-1">
-                <div class="col-md-12 col-sm-12">
-                    <div class="p-1 hidden-xs-down">
-                        <h2 class="display-1">
-                            Welcome to Energy Losses</h2>
-                    </div>
-                    <div class="p-1 hidden-md-up">
-                        <h2 class="display-3">
-                            Welcome to Energy Losses</h2>
-                    </div>
-                </div>
-            </div>
+        <div class="col-md-11 col-sm-12">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <router-outlet></router-outlet>

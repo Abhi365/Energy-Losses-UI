@@ -1,0 +1,33 @@
+.margin-top {
+    margin-top: 20px;
+}
+
+.padding-top-bottom {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+a.expandLink {
+    color: #00455b;
+    /*text-decoration: underline;*/
+    cursor: pointer;
+}
+
+a.expandLink:hover {
+    color: #00455b;
+    /*text-decoration: underline;*/
+    cursor: pointer;
+}
+
+.modal-form-margin-top {
+    margin-top: 15px;
+}
+
+.modal-form-margin-top label {
+    font-size: 12px;
+}
+
+.btn-desktop-margin {
+    margin-top: 31px;
+    margin-right: 15px;
+}

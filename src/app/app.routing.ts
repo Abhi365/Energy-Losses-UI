@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 
+
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'reports', loadChildren: 'app/table/table.module#TableModule' }
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    { path: 'subscription', loadChildren: 'app/admin/account-management/subscription/subscription.module#SubscriptionModule' }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+export const AppRouting: ModuleWithProviders = RouterModule.forRoot(routes);

@@ -13,8 +13,11 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 //Import routing
-import { routing } from './app.routing';
+import { AppRouting } from './app.routing';
 import { FooterComponent } from './footer/footer.component';
+
+//Import Shared Service
+import { StorageService } from './shared/storage/storage.service';
 
 @NgModule({
     declarations: [
@@ -31,9 +34,9 @@ import { FooterComponent } from './footer/footer.component';
         // Register the modules
         BrowserAnimationsModule,
         // Register routing
-        routing
+        AppRouting
     ],
-    providers: [],
+    providers: [StorageService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

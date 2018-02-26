@@ -1,0 +1,60 @@
+<!-- User Maintenance Routing-->
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="p-top-bottom">
+
+            <!-- WTW Software Gray background -->
+            <div class="card card-tabs bg-softwaregray-1">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs float-xs-left">
+                        <li class="nav-item">
+                            <a id="1" class="nav-link" routerLink="existingUsers" routerLinkActive="active">Existing Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="2" class="nav-link" routerLink="addNewUsers" routerLinkActive="active">Add New Users</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-block">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12" style="margin-top:20px;">
+    <hr>
+</div>
+<div class="hidden-md-up">
+    <div>
+        <button type="button" class="btn btn-secondary btn-block" (click)='navigateToEnergyLossesInfo()' name="backButton">Back</button>
+    </div>
+</div>
+<div class="hidden-sm-down">
+    <div>
+        <button type="button" class="btn btn-secondary float-xs-left" (click)='navigateToEnergyLossesInfo()' name="backButton">Back</button>
+    </div>
+</div>
+
+<!-- User Maintenance Routing-->
+<!--<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="col-md-12 col-sm-12">
+            <div>
+
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<!--<div class="nav-container">
+                        <ul class="nav nav-horizontal nav-horizontal-light nav-pills">
+                            <li class="nav-item">
+                                <a id="1" class="nav-link" routerLink="addNewUsers" routerLinkActive="active">Add New Users</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="2" class="nav-link" routerLink="existingUsers" routerLinkActive="active">Existing Users</a>
+                            </li>
+                        </ul>
+                    </div>-->

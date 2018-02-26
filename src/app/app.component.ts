@@ -1,18 +1,28 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, OnDestroy } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 declare var $: any;
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-    constructor() {
+export class AppComponent implements OnInit,AfterViewChecked,OnDestroy {
+  showAdminNavigation: boolean;
+  dropdownOpen: boolean;
+  constructor(private _router:Router) {
+    this.showAdminNavigation = false;
+    this.dropdownOpen=false;
+  }
 
-    }
-
-    ngOnInit() {
-        $('#adminElem').hover(
+  ngOnInit() {
+    this._router.events.subscribe((evt) => {
+            if (!(evt instanceof NavigationEnd)) {
+                return;
+            }
+            window.scrollTo(0, 0)
+        });
+    $('#adminElem').hover(
       () => {
         $('.nav-vertical-submenu').addClass('active');
       },
@@ -28,5 +38,26 @@ export class AppComponent implements OnInit {
         $('.nav-vertical-submenu').removeClass('active');
       }
     );
-    } 
+  }
+
+  ngOnDestroy() {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+  }
+
+  ngAfterViewChecked() {
+// window.scrollTo(0, 0);
+}
+
+  changeNavigation() {
+    this.showAdminNavigation = true;
+  }
+  
+  dropdownstatus() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
+
+  menuMobileToggle() {
+    $('.navbar-toggler').toggleClass("opentime closedtime");
+  }
 }
