@@ -28,32 +28,40 @@
         </div>
         <div class="p-1 hidden-md-up">
             <h2 class="display-3 left-pad">
-                <a><i class="fa fa-search" (click)='changeTextToHeaderField()'></i></a> <input type="text" class="form-control" [ngModel]='searchValue' (input)="onSearchChange($event.target.value)" autofocus required name="searchText" placeholder="Search Subscription">
+                <div class="row">
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        <a (click)="changeTextToHeaderField()"><i class="fa fa-search"></i></a>
+                    </div>
+                    <div class="col-md-11 col-sm-11 col-xs-11">
+                        <input type="text" class="form-control" [ngModel]='searchValue' (input)="onSearchChange($event.target.value)" autofocus required name="searchText" placeholder="Search Subscription">
+                    </div>
+                </div>
             </h2>
         </div>
     </div>
 </div>
-<div class="row sub-add-btn" *ngIf='!searchView'>
+<div class="row hidden-sm-down sub-add-btn" *ngIf='!searchView'>
     <div class="col-md-12 col-sm-12">
-        <div class="hidden-sm-down">
+        <div class="">
             <h2 class="display-3 left-pad">
                 <div class="row">
-                    <div class="col-md-1">
+                    <div class="col-md-1 col-sm-1 col-xs-1">
 
                     </div>
-                    <div class="col-md-11">
+                    <div class="col-md-11 col-sm-11 col-xs-11">
                         <a (click)='onAddSubscription()'><i class="fa fa-plus-circle">Add New Subscription</i></a>
                     </div>
                 </div>
             </h2>
         </div>
-        <div class="hidden-md-up">
+    </div>
+</div>
+<div class="row hidden-md-up sub-add-btn-mob" *ngIf='!searchView'>
+    <div class="col-md-12 col-sm-12">
+        <div class="">
             <h2 class="display-3 left-pad">
                 <div class="row">
-                    <div class="col-md-1">
-
-                    </div>
-                    <div class="col-md-11">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-xs-center">
                         <a (click)='onAddSubscription()'><i class="fa fa-plus-circle">Add New Subscription</i></a>
                     </div>
                 </div>
@@ -152,8 +160,8 @@
                             <div class="col-md-4">
                                 <button type="button" [disabled]='searchValue.length==0' class="btn btn-primary hidden-sm-down pull-left" (click)='searchSubscriptions()'>Search</button>
                                 <button type="button" class="btn btn-secondary hidden-sm-down pull-right" (click)='reset()'>Reset</button>
-                                <button type="button" class="btn btn-secondary hidden-md-up btn-block" (click)='reset()'>Reset</button>
                                 <button type="button" [disabled]='searchValue.length==0' class="btn btn-primary hidden-md-up btn-block" (click)='searchSubscriptions()'>Search</button>
+                                <button type="button" class="btn btn-secondary hidden-md-up btn-block" (click)='reset()'>Reset</button>
                             </div>
                             <div class="col-md-12 p-top-bottom" *ngIf='isSearchOn'>
                                 <div class="table-responsive addSubTableHeight table-container">
@@ -174,8 +182,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-block hidden-md-up" data-dismiss="modal" name="cancelButton">Cancel</button>
                 <button type="button" [disabled]='subSelected' class="btn btn-primary btn-block hidden-md-up" (click)="continueSelectedSubscription()" data-dismiss="modal" name="continueButton">Continue</button>
+                <button type="button" class="btn btn-secondary btn-block hidden-md-up" data-dismiss="modal" name="cancelButton">Cancel</button>
                 <button type="button" class="btn btn-secondary hidden-sm-down" data-dismiss="modal" name="cancelButton">Cancel</button>
                 <button type="button" [disabled]='subSelected' class="btn btn-primary hidden-sm-down" (click)="continueSelectedSubscription()" data-dismiss="modal" name="continueButton">Continue</button>
             </div>
@@ -207,8 +215,8 @@
                             <div class="col-md-4">
                                 <button type="button" [disabled]='searchValue.length==0' class="btn btn-primary hidden-sm-down pull-left" (click)='searchAddSubscriptions()'>Search</button>
                                 <button type="button" class="btn btn-secondary hidden-sm-down pull-right" (click)='reset()'>Reset</button>
-                                <button type="button" class="btn btn-secondary hidden-md-up btn-block" (click)='reset()'>Reset</button>
                                 <button type="button" [disabled]='searchValue.length==0' class="btn btn-primary hidden-md-up btn-block" (click)='searchAddSubscriptions()'>Search</button>
+                                <button type="button" class="btn btn-secondary hidden-md-up btn-block" (click)='reset()'>Reset</button>
                             </div>
                             <div class="col-md-12 p-top-bottom" *ngIf='isAddSearchOn'>
                                 <div class="table-responsive addSubTableHeight table-container">
@@ -240,8 +248,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-block hidden-md-up" data-dismiss="modal" name="cancelButton">Cancel</button>
                 <button type="button" [disabled]='subSelected' class="btn btn-primary btn-block hidden-md-up" (click)="continueSelectedAddSubscription()" data-dismiss="modal" name="continueButton">Continue</button>
+                <button type="button" class="btn btn-secondary btn-block hidden-md-up" data-dismiss="modal" name="cancelButton">Cancel</button>
                 <button type="button" class="btn btn-secondary hidden-sm-down" data-dismiss="modal" name="cancelButton">Cancel</button>
                 <button type="button" [disabled]='subSelected' class="btn btn-primary hidden-sm-down" (click)="continueSelectedAddSubscription()" data-dismiss="modal" name="continueButton">Continue</button>
             </div>

@@ -225,3 +225,16 @@ th.header-add-sub {
 .sub-add-btn a i {
     color: #fff;
 }
+
+.sub-add-btn-mob {
+    /*background: #009ed1;*/
+    background: #00a0d2;
+    color: #fff;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 10px;
+}
+
+.sub-add-btn-mob a i {
+    color: #fff;
+}
